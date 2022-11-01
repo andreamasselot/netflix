@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import categories from "./netflix.json";
+import logo from "./img/logo.png";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  return (<>
+    <header>
+      <img className="logo" src={logo} />
+    </header>
+    <div className="container">
+      {categories.map(c => {
+
+        return (
+          <div>
+
+            < h2 className="titles" > {c.category}</h2>
+
+            <div className="OOO">
+              {
+                c.images.map(image => {
+                  return (<div className="images-container">
+                    <img className="images-row" src={image} />
+                  </div>
+                  );
+                })
+              }
+            </div>
+          </div >
+        );
+      })};
+
+    </div ></>
   );
 }
-
 export default App;
+

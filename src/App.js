@@ -1,6 +1,7 @@
 import "./App.css";
 import categories from "./netflix.json";
 import logo from "./img/logo.png";
+import Section from "./components/Section";
 
 
 function App() {
@@ -8,29 +9,17 @@ function App() {
     <header>
       <img className="logo" src={logo} />
     </header>
+
     <div className="container">
-      {categories.map(c => {
+      {categories.map((elem, index) => {
 
         return (
-          <div>
-
-            < h2 className="titles" > {c.category}</h2>
-
-            <div className="OOO">
-              {
-                c.images.map(image => {
-                  return (<div className="images-container">
-                    <img className="images-row" src={image} />
-                  </div>
-                  );
-                })
-              }
-            </div>
-          </div >
+          <Section key={index} category={elem.category} info={elem} images={elem.images} />
         );
       })};
 
-    </div ></>
+    </div >
+  </>
   );
 }
 export default App;

@@ -7,7 +7,7 @@ import Section from "./components/Section";
 function App() {
   return (<>
     <header>
-      <img className="logo" src={logo} />
+      <img className="logo" src={logo} alt="logo netflix" />
     </header>
 
     <div className="container">
